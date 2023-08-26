@@ -63,8 +63,8 @@
                             <td class="text-center"><?= $datos->fechaNacimiento ?></td>
                             <td class="text-center"><?= $datos->deathNote ?></td>
                             <td>
-                                <a href="modificar_producto.php" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                <a href="modificar_producto.php?id=<?= $datos->id_persona ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a onclick="return eliminar()" href="index.php?id=<?= $datos->id_persona ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php }
