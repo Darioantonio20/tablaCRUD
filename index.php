@@ -8,11 +8,21 @@
     <script src="https://kit.fontawesome.com/9ae3e2b909.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <script>
+        function eliminar() {
+            var respuesta = confirm("Estáis segurito de eliminar a la persona? ");
+            return respuesta
+        }
+    </script>
+    <?php
+    include "controlador/eliminar_persona.php";
+    include "modelo/conexion.php";
+    ?>
+    <h1>----------</h1>
     <div class="container-fluid row">
         <form class="col-4 text-center" method="POST">
             <h2 class="p-4 text-secondary">Registro Trata De Blancas</h2>
             <?php
-            include "modelo/conexion.php";
             include "controlador/registro_persona.php";
             ?>
             <div class="mb-3 p-2">
