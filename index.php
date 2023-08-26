@@ -8,7 +8,6 @@
     <script src="https://kit.fontawesome.com/9ae3e2b909.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 class="text-center">Hola timmy</h1>
     <div class="container-fluid row">
         <form class="col-4 text-center" method="POST">
             <h2 class="p-4 text-secondary">Registro Trata De Blancas</h2>
