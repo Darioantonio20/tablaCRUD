@@ -1,3 +1,9 @@
+<?php
+include "modelo/conexion.php";
+include "controlador/eliminar_persona.php";
+include "controlador/registro_persona.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,36 +20,30 @@
             return respuesta
         }
     </script>
-    <?php
-    include "controlador/eliminar_persona.php";
-    include "modelo/conexion.php";
-    ?>
     <h1 class="text-center">-----UWU-----</h1>
     <div class="container-fluid row">
         <form class="col-4 text-center" method="POST">
             <h2 class="p-4 text-secondary">Registro Trata De Blancas</h2>
-            <?php
-            include "controlador/registro_persona.php";
-            ?>
+          
             <div class="mb-3 p-2">
-              <label for="exampleInputEmail1" class="form-label">Nombre De La Persona</label>
-              <input type="text" class="form-control" name="nombrePersona">
+              <label class="form-label">Nombre De La Persona</label>
+              <input type="text" class="form-control" name="nombreP">
             </div>
             <div class="mb-3 p-2">
-                <label for="exampleInputEmail1" class="form-label">Apellido Paterno</label>
-                <input type="text" class="form-control" name="apellidoPaterno">
+                <label class="form-label">Apellido Paterno</label>
+                <input type="text" class="form-control" name="apellidoP">
             </div>
             <div class="mb-3 p-2">
-                <label for="exampleInputEmail1" class="form-label">Apellido Materno</label>
-                <input type="text" class="form-control" name="apellidoMaterno">
+                <label class="form-label">Apellido Materno</label>
+                <input type="text" class="form-control" name="apellidoM">
             </div>
             <div class="mb-3 p-2">
-                <label for="exampleInputEmail1" class="form-label">Fecha De Nacimiento</label>
-                <input type="date" class="form-control" name="fechaNacimiento">
+                <label class="form-label">Fecha De Nacimiento</label>
+                <input type="date" class="form-control" name="fechaN">
             </div>
             <div class="mb-3 p-2">
-                <label for="exampleInputEmail1" class="form-label">Nota</label>
-                <input type="text" class="form-control" name="deathNote">
+                <label class="form-label">Nota</label>
+                <input type="text" class="form-control" name="deathN">
             </div>
             <button type="submit" class="btn btn-success" name="btnRegistrar" value="ok">Registrar</button>
         </form>
@@ -62,7 +62,6 @@
                 </thead>
                 <tbody>
                     <?php
-                    include "modelo/conexion.php";
                     $sql=$conexion->query("select * from producto");
                     while($datos=$sql->fetch_object()){ ?>
                         <tr>
