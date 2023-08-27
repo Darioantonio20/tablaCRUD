@@ -1,14 +1,14 @@
 <?php
 
 if (!empty($_POST["btnRegistrar"])) {
-   if (!empty($_POST["nombrePersona"]) and !empty($_POST["apellidoPaterno"]) and !empty($_POST["apellidoMaterno"]) and !empty($_POST["fechaNacimiento"]) and !empty($_POST["deathNote"])) {
-        $id_persona=$_POST["id_persona"];
-        $nombrePersona=$_POST["nombrePersona"];
-        $apellidoPaterno=$_POST["apellidoPaterno"];
-        $apellidoMaterno=$_POST["apellidoMaterno"];
-        $fechaNacimiento=$_POST["fechaNacimiento"];
-        $deathNote=$_POST["deathNote"];
-        $sql=$conexion->query(" update persona set nombrePersona='$nombrePersona', apellidoPaterno='$apellidoPaterno', apellidoMaterno='$apellidoMaterno', fechaNacimiento='$fechaNacimiento', deathNote='$deathNote' where id_producto ");
+   if (!empty($_POST["nombreP"]) and !empty($_POST["apellidoP"]) and !empty($_POST["apellidoM"]) and !empty($_POST["fechaN"]) and !empty($_POST["deathN"])) {
+        $id=$_POST["id"];
+        $nombreP=$_POST["nombreP"];
+        $apellidoP=$_POST["apellidoP"];
+        $apellidoM=$_POST["apellidoM"];
+        $fechaN=$_POST["fechaN"];
+        $deathN=$_POST["deathN"];
+        $sql=$conexion->query(" update producto set nombreP='$nombreP', apellidoP='$apellidoP', apellidoM='$apellidoM', fechaN='$fechaN', deathN='$deathN' where id_producto=$id ");
         if ($sql==1) {
             header("location:index.php");
         } else {

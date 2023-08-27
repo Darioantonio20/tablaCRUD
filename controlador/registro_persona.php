@@ -1,15 +1,15 @@
  <?php
  if(!empty($_POST["btnRegistrar"])){
-    if(!empty($_POST["nombrePersona"]) and !empty($_POST["apellidoPaterno"]) and !empty($_POST["apellidoMaterno"]) and !empty($_POST["fechaNacimiento"]) and !empty($_POST["deathNote"])){
+    if(!empty($_POST["nombreP"]) and !empty($_POST["apellidoP"]) and !empty($_POST["apellidoM"]) and !empty($_POST["fechaN"]) and !empty($_POST["deathN"])){
         echo "Todos los campos están rellenados";
 
-        $nombrePersona=$_POST["nombrePersona"];
-        $apellidoPaterno=$_POST["apellidoPaterno"];
-        $apellidoMaterno=$_POST["apellidoMaterno"];
-        $fechaNacimiento=$_POST["fechaNacimiento"];
-        $deathNote=$_POST["deathNote"];
+        $nombreP=$_POST["nombreP"];
+        $apellidoP=$_POST["apellidoP"];
+        $apellidoM=$_POST["apellidoM"];
+        $fechaN=$_POST["fechaN"];
+        $deathN=$_POST["deathN"];
 
-        $sql=$conexion->query(" insert into persona(nombrePersona,apellidoPaterno,apellidoMaterno,fechaNacimiento,deathNote)values('$nombrePersona','$apellidoPaterno','$apellidoMaterno','$fechaNacimiento','$deathNote') ");
+        $sql=$conexion->query(" insert into producto(nombreP,apellidoP,apellidoM,fechaN,deathN)values('$nombreP','$apellidoP','$apellidoM','$fechaN','$deathN') ");
         if ($sql==1) {
             echo '<div class="alert alert-success">Persona Registrada Correctamente</div>';
         }else{

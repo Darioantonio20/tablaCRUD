@@ -2,7 +2,7 @@
 include "modelo/conexion.php";
 $id=$_GET["id"];
 
-$sql=$conexion->query(" select * from persona where id_persona=$id ");
+$sql=$conexion->query(" select * from producto where id_producto=$id ");
 
 ?>
 <!DOCTYPE html>
@@ -17,29 +17,29 @@ $sql=$conexion->query(" select * from persona where id_persona=$id ");
 <body>
     <form class="col-4 text-center m-auto p-3" method="POST">
         <h2 class="p-4 text-secondary">Modificar Producto De Trata De Blancas</h2>
-        <input type="hidden" name="id_persona" value="<?= $_GET["id_persona"]?>">
+        <input type="hidden" name="id" value="<?= $_GET["id"]?>">
         <?php
        include "controlador/modificar_producto.php";
        while($datos=$sql->fetch_object()){?>
         <div class="mb-3 p-2">
             <label for="exampleInputEmail1" class="form-label">Nombre De La Persona</label>
-            <input type="text" class="form-control" name="nombrePersona" value="<?= $datos->nombrePersona ?>">
+            <input type="text" class="form-control" name="nombreP" value="<?= $datos->nombreP ?>">
         </div> 
         <div class="mb-3 p-2">
             <label for="exampleInputEmail1" class="form-label">Apellido Paterno</label>
-            <input type="text" class="form-control" name="apellidoPaterno" value="<?= $datos->apellidoPaterno ?>">
+            <input type="text" class="form-control" name="apellidoP" value="<?= $datos->apellidoP ?>">
         </div>
         <div class="mb-3 p-2">
             <label for="exampleInputEmail1" class="form-label">Apellido Materno</label>
-            <input type="text" class="form-control" name="apellidoMaterno" value="<?= $datos->apellidoMaterno ?>">
+            <input type="text" class="form-control" name="apellidoM" value="<?= $datos->apellidoM ?>">
         </div>
         <div class="mb-3 p-2">
             <label for="exampleInputEmail1" class="form-label">Fecha De Nacimiento</label>
-            <input type="date" class="form-control" name="fechaNacimiento" value="<?= $datos->fechaNacimiento ?>">
+            <input type="date" class="form-control" name="fechaN" value="<?= $datos->fechaN ?>">
         </div>
         <div class="mb-3 p-2">
             <label for="exampleInputEmail1" class="form-label">Nota</label>
-            <input type="text" class="form-control" name="deathNote" value="<?= $datos->deathNote ?>">
+            <input type="text" class="form-control" name="deathN" value="<?= $datos->deathN ?>">
         </div>
 
         <?php }

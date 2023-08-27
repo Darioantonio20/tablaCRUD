@@ -18,7 +18,7 @@
     include "controlador/eliminar_persona.php";
     include "modelo/conexion.php";
     ?>
-    <h1>----------</h1>
+    <h1 class="text-center">-----UWU-----</h1>
     <div class="container-fluid row">
         <form class="col-4 text-center" method="POST">
             <h2 class="p-4 text-secondary">Registro Trata De Blancas</h2>
@@ -63,18 +63,18 @@
                 <tbody>
                     <?php
                     include "modelo/conexion.php";
-                    $sql=$conexion->query("select * from persona");
+                    $sql=$conexion->query("select * from producto");
                     while($datos=$sql->fetch_object()){ ?>
                         <tr>
-                            <td class="text-justify"><?= $datos->id_persona ?></td>
-                            <td class="text-center"><?= $datos->nombrePersona ?></td>
-                            <td class="text-center"><?= $datos->apellidoPaterno ?></td>
-                            <td class="text-center"><?= $datos->apellidoMaterno ?></td>
-                            <td class="text-center"><?= $datos->fechaNacimiento ?></td>
-                            <td class="text-center"><?= $datos->deathNote ?></td>
+                            <td class="text-justify"><?= $datos->id_producto ?></td>
+                            <td class="text-center"><?= $datos->nombreP ?></td>
+                            <td class="text-center"><?= $datos->apellidoP ?></td>
+                            <td class="text-center"><?= $datos->apellidoM ?></td>
+                            <td class="text-center"><?= $datos->fechaN ?></td>
+                            <td class="text-center"><?= $datos->deathN ?></td>
                             <td>
-                                <a href="modificar_producto.php?id=<?= $datos->id_persona ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a onclick="return eliminar()" href="index.php?id=<?= $datos->id_persona ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                <a href="modificar_producto.php?id=<?= $datos->id_producto ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a onclick="return eliminar()" href="index.php?id=<?= $datos->id_producto ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php }
